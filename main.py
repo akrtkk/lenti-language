@@ -50,6 +50,7 @@ class Interpreter:
 
 interpreter = Interpreter()
 print(Fore.BLUE + "Lenti Terminal")
+while True:
     code = input(Fore.YELLOW + '>> ')
     print(" ")
     interpreter.run(code)
