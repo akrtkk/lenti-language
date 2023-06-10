@@ -7,9 +7,13 @@ Lenti Terminal is a simple command-line interpreter written in Python. It allows
 To use Lenti Terminal, you need to have Python 3 installed on your computer. You also need to install the `colorama` library by running the following command:
 
 ```
-
 pip install colorama
+```
 
+or
+
+```
+pip install -r requirements.txt
 ```
 
 ## Usage
