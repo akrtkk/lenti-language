@@ -43,9 +43,7 @@ Lenti Terminal supports the following commands:
 To use a command, simply enter it in the terminal followed by the appropriate arguments. For example, to add two numbers, you can enter the following command:
 
 ```
-
 add 3 4
-
 ```
 
 This will add the numbers 3 and 4 and print the result.
