@@ -1,37 +1,54 @@
-# lenti-language
+# Lenti Terminal
 
-This is a simple terminal emulator written in Python.
+Lenti Terminal is a simple command-line interpreter written in Python. It allows users to enter commands and execute them in a terminal-like environment.
+
+## Installation
+
+To use Lenti Terminal, you need to have Python 3 installed on your computer. You also need to install the `colorama` library by running the following command:
+
+```
+
+pip install colorama
+
+```
 
 ## Usage
 
-To use the terminal, simply run the `main.py` file.
+To use Lenti Terminal, simply run the `lenti_terminal.py` script. This will open a terminal-like environment where you can enter commands.
 
-## Commands
+Lenti Terminal supports the following commands:
 
-The following commands are available:
+- `print`: Prints one or two words.
 
-### `print`
+- `help`: Displays a list of available commands.
 
-Prints one or two words in blue color.
+- `add`: Adds two numbers and prints the result.
 
-Usage:
+- `read`: Reads the content of a file and prints it.
 
-print <word1> [word2] (word 2 is optional)
+- `write`: Writes content to a file.
 
-### `help`
+- `append`: Appends content to a file.
 
-Displays the list of available commands.
+- `copy`: Copies a file.
 
-Usage:
+- `rename`: Renames a file.
 
-help 
+- `delete`: Deletes a file.
 
-### `add`
+To use a command, simply enter it in the terminal followed by the appropriate arguments. For example, to add two numbers, you can enter the following command:
 
-Adds two numbers and prints the result.
+```
 
-Usage:
-  
-add <number1> <number2>
-  
+add 3 4
+
+```
+
+This will add the numbers 3 and 4 and print the result.
+
+## License
+
+Lenti Terminal is released under the MIT license. See the LICENSE file for more information.
+
+I hope this helps! Let me know if you have any questions on how I made this.
 # Please Feel Free to Report Issues. 👋
