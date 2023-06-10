@@ -9,7 +9,13 @@ class Interpreter:
         self.commands = {
             "print": self.printly,
             "help": self.helply,
-            "add": self.addly
+            "add": self.addly,
+            "read": self.readly,
+            "write": self.writely,
+            "append": self.appendly,
+            "copy": self.copyly,
+            "rename": self.renamely,
+            "delete": self.deletely
         }
 
     def run(self, code):
@@ -47,6 +53,80 @@ class Interpreter:
             print(Fore.BLUE + str(result))
         except ValueError:
             print(Fore.BLUE + "Invalid arguments")
+
+    def readly(self, tokens):
+        """Reads the content of a file and prints it"""
+        if len(tokens) != 2:
+            print(Fore.BLUE + "Invalid number of arguments")
+            return
+        try:
+            with open(tokens[1], 'r') as file:
+                content = file.read()
+                print(Fore.BLUE + content)
+        except FileNotFoundError:
+            print(Fore.BLUE + f"File {tokens[1]} not found")
+
+    def writely(self, tokens):
+        """Writes content to a file"""
+        if len(tokens) < 3:
+            print(Fore.BLUE + "Invalid number of arguments")
+            return
+        try:
+            with open(tokens[1], 'w') as file:
+                content = ' '.join(tokens[2:])
+                file.write(content)
+                print(Fore.BLUE + f"Content written to {tokens[1]}")
+        except FileNotFoundError:
+            print(Fore.BLUE + f"File {tokens[1]} not found")
+
+    def appendly(self, tokens):
+        """Appends content to a file"""
+        if len(tokens) < 3:
+            print(Fore.BLUE + "Invalid number of arguments")
+            return
+        try:
+            with open(tokens[1], 'a') as file:
+                content = ' '.join(tokens[2:])
+                file.write(content)
+                print(Fore.BLUE + f"Content appended to {tokens[1]}")
+        except FileNotFoundError:
+            print(Fore.BLUE + f"File {tokens[1]} not found")
+
+    def copyly(self, tokens):
+        """Copies a file"""
+        if len(tokens) != 3:
+            print(Fore.BLUE + "Invalid number of arguments")
+            return
+        try:
+            with open(tokens[1], 'r') as src_file:
+                with open(tokens[2], 'w') as dest_file:
+                    content = src_file.read()
+                    dest_file.write(content)
+                    print(Fore.BLUE + f"File {tokens[1]} copied to {tokens[2]}")
+        except FileNotFoundError:
+            print(Fore.BLUE + f"File {tokens[1]} not found")
+
+    def renamely(self, tokens):
+        """Renames a file"""
+        if len(tokens) != 3:
+            print(Fore.BLUE + "Invalid number of arguments")
+            return
+        try:
+            os.rename(tokens[1], tokens[2])
+            print(Fore.BLUE + f"File {tokens[1]} renamed to {tokens[2]}")
+        except FileNotFoundError:
+            print(Fore.BLUE + f"File {tokens[1]} not found")
+
+    def deletely(self, tokens):
+        """Deletes a file"""
+        if len(tokens) != 2:
+            print(Fore.BLUE + "Invalid number of arguments")
+            return
+        try:
+            os.remove(tokens[1])
+            print(Fore.BLUE + f"File {tokens[1]} deleted")
+        except FileNotFoundError:
+            print(Fore.BLUE + f"File {tokens[1]} not found")
 
 interpreter = Interpreter()
 print(Fore.BLUE + "Lenti Terminal")
