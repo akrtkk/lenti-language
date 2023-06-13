@@ -1,6 +1,6 @@
 # Lenti Terminal
 
-Lenti Terminal is a simple command-line interpreter written in Python. It allows users to enter commands and execute them in a terminal-like environment.
+Lenti Terminal is a simple command-line interpreter written in Python and C (the c version is not that much funcationle). It allows users to enter commands and execute them in a terminal-like environment.
 
 ## Installation
 
